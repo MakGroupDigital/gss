@@ -206,6 +206,144 @@
     sizeHs();
     onScroll();
 
+    // ========== BANNIÈRE VIDÉO ==========
+    // Les navigateurs bloquent le son automatique sans interaction : on tente la lecture
+    // sonore, sinon on joue en muet et on active le son au premier geste du visiteur.
+    const reel = document.querySelector('.reel');
+    const video = reel?.querySelector('.reel-video');
+    if (reel && video) {
+        const soundBtn = reel.querySelector('.reel-sound');
+        const soundLabel = reel.querySelector('[data-sound-label]');
+        const timeEl = reel.querySelector('[data-reel-time]');
+        let wantSound = true;   // intention du visiteur (son souhaité par défaut)
+        let inView = true;
+        let format = null;
+        let fadeRaf = 0;
+        let selfPause = false;
+
+        const setUi = state => {
+            soundBtn.setAttribute('aria-pressed', state === 'on');
+            soundBtn.classList.toggle('is-blocked', state === 'blocked');
+            soundLabel.textContent = state === 'on' ? 'Couper le son' : 'Activer le son';
+        };
+
+        const fadeTo = (target, done) => {
+            cancelAnimationFrame(fadeRaf);
+            const from = video.volume;
+            const start = performance.now();
+            const step = now => {
+                const p = Math.min((now - start) / 500, 1);
+                video.volume = Math.min(1, Math.max(0, from + (target - from) * p));
+                if (p < 1) fadeRaf = requestAnimationFrame(step);
+                else done?.();
+            };
+            fadeRaf = requestAnimationFrame(step);
+        };
+
+        const playWithSound = () => {
+            video.muted = false;
+            video.volume = 0;
+            // Certains navigateurs « acceptent » la lecture puis mettent en pause : on vérifie
+            return video.play()
+                .then(() => new Promise(r => setTimeout(r, 300)))
+                .then(() => {
+                    if (video.paused || video.muted) throw new Error('blocked');
+                    fadeTo(1);
+                    setUi('on');
+                });
+        };
+
+        const playMuted = () => {
+            video.muted = true;
+            setUi(wantSound ? 'blocked' : 'off');
+            return video.play().catch(() => {});
+        };
+
+        const resume = () => {
+            if (!inView || document.hidden) return;
+            if (wantSound) playWithSound().catch(playMuted);
+            else playMuted();
+        };
+
+        const silence = pause => {
+            fadeTo(0, () => {
+                video.muted = true;
+                if (pause) { selfPause = true; video.pause(); }
+            });
+        };
+
+        // Chrome peut lancer la lecture sonore puis la stopper (« Unmuting failed ») :
+        // toute pause qu'on n'a pas demandée bascule en lecture muette
+        video.addEventListener('pause', () => {
+            if (selfPause || video.ended) { selfPause = false; return; }
+            if (inView && !document.hidden) playMuted();
+        });
+
+        const pickFormat = () => {
+            const next = window.innerWidth / window.innerHeight < .75 ? 'port' : 'land';
+            if (next === format) return;
+            const t = video.currentTime || 0;
+            const first = format === null;
+            format = next;
+            reel.classList.toggle('is-portrait', next === 'port');
+            video.poster = video.dataset[`${next}Poster`];
+            video.src = video.dataset[next];
+            if (!first) video.addEventListener('loadedmetadata', () => { video.currentTime = t; resume(); }, { once: true });
+        };
+
+        // Premier geste du visiteur : on débloque le son s'il le souhaite toujours
+        const unlock = e => {
+            if (e.target.closest('.reel-sound')) return;
+            ['pointerdown', 'keydown', 'touchstart'].forEach(ev => window.removeEventListener(ev, unlock, true));
+            if (wantSound && inView && video.muted) playWithSound().catch(() => {});
+        };
+        ['pointerdown', 'keydown', 'touchstart'].forEach(ev => window.addEventListener(ev, unlock, true));
+
+        soundBtn.addEventListener('click', () => {
+            if (!video.muted && wantSound) {
+                wantSound = false;
+                silence(false);
+                setUi('off');
+            } else {
+                wantSound = true;
+                playWithSound().catch(playMuted);
+            }
+        });
+
+        // Le son s'arrête dès qu'on quitte la bannière, reprend quand on y revient
+        new IntersectionObserver(([entry]) => {
+            inView = entry.intersectionRatio >= .4;
+            if (inView) resume();
+            else silence(true);
+        }, { threshold: [0, .4] }).observe(reel);
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) { selfPause = true; video.pause(); } else resume();
+        });
+        document.addEventListener('click', e => {
+            if (e.target.closest('a[href*=".html"]')) silence(true);
+        });
+
+        // Fin du film : il reboucle en silence
+        video.addEventListener('ended', () => {
+            wantSound = false;
+            video.muted = true;
+            setUi('off');
+            video.currentTime = 0;
+            video.play().catch(() => {});
+        });
+
+        const mmss = s => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+        video.addEventListener('timeupdate', () => {
+            const d = video.duration || 90;
+            reel.style.setProperty('--p', video.currentTime / d);
+            timeEl.textContent = `${mmss(video.currentTime)} / ${mmss(d)}`;
+        });
+
+        window.addEventListener('resize', pickFormat);
+        pickFormat();
+    }
+
     // ========== BOUTONS MAGNÉTIQUES ==========
     if (!reduced && window.matchMedia('(pointer: fine)').matches) {
         document.querySelectorAll('[data-magnet]').forEach(el => {

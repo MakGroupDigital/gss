@@ -48,7 +48,23 @@
     </div>
 
     <main id="main">
-        <section class="hero is-dark">
+        <section class="reel is-dark" aria-label="Film de présentation de GSS">
+            <div class="reel-frame">
+                <video class="reel-video" playsinline muted preload="auto"
+                    data-land="https://res.cloudinary.com/dy73hzkpm/video/upload/q_auto,w_1920/gss/gss-company-profile-16x9.mp4"
+                    data-land-poster="https://res.cloudinary.com/dy73hzkpm/video/upload/so_3,q_auto,w_1920/gss/gss-company-profile-16x9.jpg"
+                    data-port="https://res.cloudinary.com/dy73hzkpm/video/upload/q_auto,w_1080/gss/gss-company-profile-9x16.mp4"
+                    data-port-poster="https://res.cloudinary.com/dy73hzkpm/video/upload/so_3,q_auto,w_1080/gss/gss-company-profile-9x16.jpg"></video>
+            </div>
+            <div class="wrap reel-bar">
+                <button class="reel-sound" type="button" aria-pressed="false"><span class="reel-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span data-sound-label>Activer le son</span></button>
+                <div class="reel-progress" aria-hidden="true"><i></i></div>
+                <span class="mono reel-time" data-reel-time>00:00 / 01:30</span>
+                <a class="scroll-cue mono" href="#intro"><i></i>Découvrir</a>
+            </div>
+        </section>
+
+        <section class="hero hero--intro is-dark" id="intro">
             <div class="hero-emblem" aria-hidden="true"><div class="hero-emblem-inner"><svg class="mark " viewBox="0 0 64 64" aria-hidden="true"><rect class="ray" style="--i:0" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(0.000 32 32)"/><rect class="ray" style="--i:1" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(51.429 32 32)"/><rect class="ray" style="--i:2" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(102.857 32 32)"/><rect class="ray" style="--i:3" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(154.286 32 32)"/><rect class="ray" style="--i:4" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(205.714 32 32)"/><rect class="ray" style="--i:5" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(257.143 32 32)"/><rect class="ray" style="--i:6" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(308.571 32 32)"/><circle class="core" cx="32" cy="32" r="7"/></svg></div></div>
             <div class="wrap">
                 <div class="hero-meta mono" data-reveal>
