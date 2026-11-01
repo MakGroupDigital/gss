@@ -26,6 +26,7 @@ document.querySelectorAll('a, button, .service-card, .case-card').forEach(el => 
 
 // ========== PARTICLES ANIMATION ==========
 const canvas = document.getElementById('particles-canvas');
+if (canvas) {
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
@@ -80,6 +81,74 @@ window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
+}
+
+// ========== FILM INSTITUTIONNEL (HERO) ==========
+(function initHeroVideo() {
+    const video = document.getElementById('hero-video');
+    if (!video) return;
+    const nav = document.querySelector('.navbar');
+    const setNavH = () => nav && document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    setNavH();
+    window.addEventListener('resize', setNavH);
+    const soundBtn = document.getElementById('hero-sound');
+    const portraitQuery = window.matchMedia('(max-aspect-ratio: 4/5)');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = '';
+
+    function pickSource() {
+        const portrait = portraitQuery.matches;
+        const src = portrait ? video.dataset.srcPortrait : video.dataset.srcLandscape;
+        if (src === current) return;
+        current = src;
+        const wasMuted = video.muted;
+        video.poster = portrait ? video.dataset.posterPortrait : video.dataset.posterLandscape;
+        video.src = src;
+        video.load();
+        video.muted = wasMuted;
+        if (!reduceMotion || !wasMuted) video.play().catch(() => {});
+    }
+
+    pickSource();
+    if (portraitQuery.addEventListener) portraitQuery.addEventListener('change', pickSource);
+    else portraitQuery.addListener(pickSource);
+
+    // Pause quand le film n'est plus visible (économie de batterie / données)
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { if (!reduceMotion || !video.muted) video.play().catch(() => {}); }
+                else video.pause();
+            });
+        }, { threshold: 0.2 }).observe(video);
+    }
+
+    if (soundBtn) {
+        soundBtn.addEventListener('click', () => {
+            const enable = video.muted;
+            if (enable) {
+                video.currentTime = 0;   // on relance le film depuis le début avec la voix off
+                video.muted = false;
+                video.loop = false;
+                video.play().catch(() => {});
+            } else {
+                video.muted = true;
+                video.loop = true;
+            }
+            soundBtn.setAttribute('aria-pressed', String(enable));
+            soundBtn.classList.toggle('is-on', enable);
+            soundBtn.querySelector('.hero-sound-label').textContent = enable ? 'Couper le son' : 'Écouter le film';
+        });
+        video.addEventListener('ended', () => {
+            video.muted = true;
+            video.loop = true;
+            video.play().catch(() => {});
+            soundBtn.setAttribute('aria-pressed', 'false');
+            soundBtn.classList.remove('is-on');
+            soundBtn.querySelector('.hero-sound-label').textContent = 'Écouter le film';
+        });
+    }
+})();
 
 // ========== COUNTER ANIMATION ==========
 function animateCounters() {

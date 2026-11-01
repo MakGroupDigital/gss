@@ -2735,3 +2735,144 @@ a.service-card:hover {
         height: 24px;
     }
 }
+
+/* ========== HERO : FILM INSTITUTIONNEL ========== */
+.sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+}
+
+.hero.hero--video {
+    --hero-band: 88px;
+    height: auto;
+    min-height: 0;
+    display: block;
+    padding-top: var(--nav-h, 80px);
+    background: #06112B;
+}
+
+.hero--video .hero-stage {
+    position: relative;
+    width: 100%;
+    background: #06112B;
+    line-height: 0;
+}
+
+.hero--video .hero-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: calc(100svh - var(--nav-h, 80px) - var(--hero-band));
+    object-fit: contain;
+    background: #06112B;
+    margin: 0 auto;
+}
+
+.hero--video .hero-controls {
+    position: relative;
+    z-index: 2;
+    background: #06112B;
+    border-top: 1px solid rgba(244, 240, 230, 0.12);
+}
+
+.hero--video .hero-controls-inner {
+    min-height: var(--hero-band);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+.hero--video .hero-buttons {
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.hero--video .btn-primary,
+.hero--video .btn-secondary {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+}
+
+.hero--video .btn-primary {
+    background: #F2A900;
+    color: #06112B;
+    box-shadow: none;
+}
+
+.hero--video .btn-secondary {
+    border-color: rgba(244, 240, 230, 0.45);
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.hero-sound {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: transparent;
+    color: #F4F0E6;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+    white-space: nowrap;
+}
+
+.hero-sound-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #F2A900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #F2A900;
+    transition: background 0.3s cubic-bezier(.22, 1, .36, 1), color 0.3s cubic-bezier(.22, 1, .36, 1);
+}
+
+.hero-sound-icon svg { width: 20px; height: 20px; }
+.hero-sound .sound-wave { opacity: 0.35; }
+.hero-sound.is-on .sound-wave { opacity: 1; }
+.hero-sound:hover .hero-sound-icon,
+.hero-sound.is-on .hero-sound-icon { background: #F2A900; color: #06112B; }
+.hero-sound:focus-visible { outline: 2px solid #F2A900; outline-offset: 4px; }
+
+/* Écrans en portrait : film vertical 9:16 */
+@media (max-aspect-ratio: 4/5) {
+    .hero--video .hero-video {
+        aspect-ratio: 9 / 16;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero.hero--video { --hero-band: 132px; }
+    .hero--video .hero-controls-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+    }
+    .hero--video .hero-buttons {
+        flex-direction: row;
+        gap: 0.6rem;
+    }
+    .hero--video .btn-primary,
+    .hero--video .btn-secondary {
+        flex: 1;
+        padding: 0.8rem 0.5rem;
+        font-size: 0.78rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+    .hero-sound { justify-content: center; }
+}

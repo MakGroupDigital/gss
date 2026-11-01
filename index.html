@@ -40,15 +40,37 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="accueil" class="hero">
-        <div class="hero-overlay"></div>
-        <canvas id="particles-canvas"></canvas>
-        <div class="container hero-content">
-            <h1 class="hero-title">Bien plus qu'un prestataire,<br><span class="highlight">votre partenaire de croissance</span></h1>
+    <section id="accueil" class="hero hero--video">
+        <!-- Film institutionnel GSS (hébergé sur Cloudinary) -->
+        <div class="hero-stage">
+        <video id="hero-video" class="hero-video" autoplay muted loop playsinline preload="metadata"
+               poster="assets/hero-poster-16x9.jpg"
+               data-src-landscape="https://res.cloudinary.com/dy73hzkpm/video/upload/gss/gss-company-profile-16x9.mp4"
+               data-src-portrait="https://res.cloudinary.com/dy73hzkpm/video/upload/gss/gss-company-profile-9x16.mp4"
+               data-poster-landscape="assets/hero-poster-16x9.jpg"
+               data-poster-portrait="assets/hero-poster-9x16.jpg"
+               aria-label="Film de présentation de Global Solutions Services">
+        </video>
+        </div>
+
+        <!-- Texte conservé pour le référencement et les lecteurs d'écran (le film l'affiche déjà) -->
+        <div class="hero-content sr-only">
+            <h1 class="hero-title">Bien plus qu'un prestataire, votre partenaire de croissance</h1>
             <p class="hero-subtitle">De la gestion technique à l'agro-industrie, nous déployons des solutions concrètes pour transformer vos ambitions en performances réelles.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Discuter de votre projet</a>
-                <button class="btn-secondary" onclick="openQuiz()">Trouvez votre solution</button>
+        </div>
+
+        <div class="hero-controls">
+            <div class="container hero-controls-inner">
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Discuter de votre projet</a>
+                    <button class="btn-secondary" onclick="openQuiz()">Trouvez votre solution</button>
+                </div>
+                <button type="button" class="hero-sound" id="hero-sound" aria-pressed="false">
+                    <span class="hero-sound-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="sound-wave" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="sound-wave" d="M19 5a10 10 0 0 1 0 14"/></svg>
+                    </span>
+                    <span class="hero-sound-label">Écouter le film</span>
+                </button>
             </div>
         </div>
     </section>
