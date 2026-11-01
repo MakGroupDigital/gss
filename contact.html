@@ -3,234 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contactez Global Solutions Services Sarl - Kinshasa & Lubumbashi, RDC">
-    <meta property="og:image" content="logo.PNG">
-    <link rel="icon" type="image/png" href="logo.PNG">
-    <title>Contact - Global Solutions Services</title>
+    <title>Contact — Global Solutions Services</title>
+    <meta name="description" content="Contactez Global Solutions Services Sarl à Kinshasa et Lubumbashi, RDC.">
+    <meta name="author" content="Global Solutions Services Sarl">
+    <meta name="theme-color" content="#06112B">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Global Solutions Services Sarl">
+    <meta property="og:title" content="Contact — Global Solutions Services">
+    <meta property="og:description" content="Contactez Global Solutions Services Sarl à Kinshasa et Lubumbashi, RDC.">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:url" content="https://gss-sarl.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <script>document.documentElement.classList.add('js')</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
-                    <img src="logo.PNG" alt="GSS Logo" class="nav-logo">
-                    <h2 style="color: inherit;">Global Solutions Services</h2>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="expertises.html">Expertises</a></li>
-                <li><a href="apropos.html">À Propos</a></li>
-                <li><a href="secteurs.html">Secteurs</a></li>
-                <li><a href="contact.html" class="btn-contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <a class="skip" href="#main">Aller au contenu</a>
+    <div class="curtain" aria-hidden="true"><svg class="mark " viewBox="0 0 64 64" aria-hidden="true"><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(0.000 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(51.429 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(102.857 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(154.286 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(205.714 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(257.143 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(308.571 32 32)"/><circle class="core" cx="32" cy="32" r="7"/></svg></div>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Contactez-Nous</h1>
-            <p>Transformons ensemble vos ambitions en réalité</p>
+    <header class="nav">
+        <div class="wrap">
+            <a class="brand" href="index.html" aria-label="Global Solutions Services — accueil">
+                <svg class="mark " viewBox="0 0 64 64" aria-hidden="true"><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(0.000 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(51.429 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(102.857 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(154.286 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(205.714 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(257.143 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(308.571 32 32)"/><circle class="core" cx="32" cy="32" r="7"/></svg>
+                <span class="brand-text"><b>Global Solutions</b><small>Services Sarl</small></span>
+            </a>
+            <nav class="nav-links" aria-label="Navigation principale"><a href="expertises.html">Expertises</a><a href="secteurs.html">Secteurs</a><a href="apropos.html">À propos</a><a href="contact.html" aria-current="page">Contact</a></nav>
+            <a class="btn btn--amber nav-cta" href="contact.html" data-magnet>Démarrer un projet <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="menu" aria-label="Menu">
+        <ol><li><a href="index.html"><span>01</span>Accueil</a></li><li><a href="expertises.html"><span>02</span>Expertises</a></li><li><a href="secteurs.html"><span>03</span>Secteurs</a></li><li><a href="apropos.html"><span>04</span>À propos</a></li><li><a href="contact.html"><span>05</span>Contact</a></li></ol>
+        <div class="menu-foot">
+            <a href="mailto:contact@gss-sarl.com">contact@gss-sarl.com</a>
+            <a href="tel:+243994950705">+243 994 950 705</a>
+            <span>Kinshasa · Lubumbashi</span>
+        </div>
+    </div>
+<main id="main">
+    <section class="page-hero is-dark">
+        <div class="page-emblem is-spinning" aria-hidden="true"><svg class="mark " viewBox="0 0 64 64" aria-hidden="true"><rect class="ray" style="--i:0" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(0.000 32 32)"/><rect class="ray" style="--i:1" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(51.429 32 32)"/><rect class="ray" style="--i:2" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(102.857 32 32)"/><rect class="ray" style="--i:3" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(154.286 32 32)"/><rect class="ray" style="--i:4" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(205.714 32 32)"/><rect class="ray" style="--i:5" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(257.143 32 32)"/><rect class="ray" style="--i:6" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(308.571 32 32)"/><circle class="core" cx="32" cy="32" r="7"/></svg></div>
+        <div class="wrap">
+            <div class="crumbs mono" data-reveal><a href="index.html">Accueil</a><span class="sep"></span><span>Contact</span></div>
+            <h1 class="h1" data-split>Parlons de <em>votre projet.</em></h1>
+            <p class="lead" data-reveal style="--d:.25s">Que vous ayez un projet précis ou que vous souhaitiez explorer les possibilités, notre équipe vous répond sous 24 heures ouvrées.</p>
+            <div class="page-hero-foot mono" data-reveal style="--d:.3s"><span>Réponse sous 24 h</span><span>Lun – Ven · 8h – 18h</span><span>Sam · 9h – 13h</span></div>
         </div>
     </section>
 
-    <section class="contact-page">
-        <div class="container">
-            <div class="contact-intro">
-                <h2>Parlons de Votre Projet</h2>
-                <p>Que vous ayez un projet précis en tête ou que vous souhaitiez simplement explorer les possibilités, notre équipe est à votre écoute. Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24 heures.</p>
-            </div>
-
-            <div class="contact-main">
-                <div class="contact-form-section">
-                    <form class="contact-form-page">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Nom complet *</label>
-                                <input type="text" placeholder="Jean Dupont" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email professionnel *</label>
-                                <input type="email" placeholder="jean.dupont@entreprise.com" required>
-                            </div>
+        <section class="section">
+            <div class="wrap contact-grid">
+                <div>
+                    <span class="label" data-reveal><b>01</b> Votre demande</span>
+                    <form class="form" data-contact-form data-reveal style="margin-top:40px">
+                        <div class="field"><label for="f-nom">Nom complet *</label><input id="f-nom" name="Nom" type="text" placeholder="Jean Dupont" autocomplete="name" required></div>
+                        <div class="field"><label for="f-mail">E-mail professionnel *</label><input id="f-mail" name="E-mail" type="email" placeholder="jean@entreprise.com" autocomplete="email" required></div>
+                        <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="Téléphone" type="tel" placeholder="+243 …" autocomplete="tel"></div>
+                        <div class="field"><label for="f-ent">Entreprise *</label><input id="f-ent" name="Entreprise" type="text" placeholder="Nom de votre entreprise" autocomplete="organization" required></div>
+                        <div class="field"><label for="f-sect">Secteur d'activité</label>
+                            <select id="f-sect" name="Secteur"><option value="">Sélectionnez</option><option>Agro-industrie</option><option>Technologies & Digital</option><option>Commerce & Distribution</option><option>Industrie & Manufacturing</option><option>Services</option><option>Autre</option></select></div>
+                        <div class="field"><label for="f-pole">Pôle souhaité *</label>
+                            <select id="f-pole" name="Pôle" required><option value="">Sélectionnez</option><option>Services &amp; Sous-traitance</option><option>Commerce &amp; e-Commerce</option><option>Logistique &amp; Supply Chain</option><option>Import-Export</option><option>Technologies &amp; Innovation</option><option>Agro-Pastoral &amp; Industrie</option><option>Formation &amp; Consultancy</option><option>Autre / Conseil général</option></select></div>
+                        <div class="field field--full"><label for="f-msg">Votre projet *</label><textarea id="f-msg" name="Projet" rows="5" placeholder="Vos besoins, objectifs et défis…" required></textarea></div>
+                        <div class="field field--full"><label for="f-bud">Budget estimé</label>
+                            <select id="f-bud" name="Budget"><option value="">Facultatif</option><option>Moins de 10 000 €</option><option>10 000 € – 50 000 €</option><option>50 000 € – 100 000 €</option><option>100 000 € – 500 000 €</option><option>Plus de 500 000 €</option></select></div>
+                        <div class="form-foot">
+                            <p>Vos informations restent confidentielles et ne servent qu'à traiter votre demande.</p>
+                            <button class="btn btn--amber" type="submit" data-magnet>Envoyer la demande <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Téléphone</label>
-                                <input type="tel" placeholder="+XXX XX XX XX XX">
-                            </div>
-                            <div class="form-group">
-                                <label>Entreprise *</label>
-                                <input type="text" placeholder="Nom de votre entreprise" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Secteur d'activité</label>
-                                <select>
-                                    <option value="">Sélectionnez votre secteur</option>
-                                    <option>Agro-industrie</option>
-                                    <option>Technologies & Digital</option>
-                                    <option>Commerce & Distribution</option>
-                                    <option>Industrie & Manufacturing</option>
-                                    <option>Services</option>
-                                    <option>Autre</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Service souhaité *</label>
-                                <select required>
-                                    <option value="">Sélectionnez un service</option>
-                                    <option>Services & Sous-traitance</option>
-                                    <option>Commerce & e-Commerce</option>
-                                    <option>Logistique & Supply Chain</option>
-                                    <option>Import-Export</option>
-                                    <option>Technologies & Innovation</option>
-                                    <option>Agro-Pastoral & Industrie</option>
-                                    <option>Formation & Consultancy</option>
-                                    <option>Autre / Conseil général</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Décrivez votre projet *</label>
-                            <textarea placeholder="Parlez-nous de vos besoins, objectifs et défis..." rows="6" required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Budget estimé (optionnel)</label>
-                            <select>
-                                <option value="">Sélectionnez une fourchette</option>
-                                <option>Moins de 10 000€</option>
-                                <option>10 000€ - 50 000€</option>
-                                <option>50 000€ - 100 000€</option>
-                                <option>100 000€ - 500 000€</option>
-                                <option>Plus de 500 000€</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn-primary">Envoyer votre demande</button>
+                        <p class="form-status" aria-live="polite"></p>
                     </form>
                 </div>
-
-                <div class="contact-info-section">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h4>Siège Social - Kinshasa</h4>
-                        <p>Avenue Tombalbaye n°43<br>Quartier de la Révolution<br>Commune de la Gombe<br>Kinshasa, RDC</p>
+                <aside>
+                    <span class="label" data-reveal><b>02</b> Coordonnées</span>
+                    <div class="info-list" data-reveal style="margin-top:40px">
+                        <div><span class="mono">Siège</span><p>Avenue Tombalbaye n°43<br>Quartier de la Révolution, Commune de la Gombe<br>Kinshasa, RDC<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Avenue+Tombalbaye+43+Gombe+Kinshasa" target="_blank" rel="noopener">Itinéraire ↗</a></p></div>
+                        <div><span class="mono">Bureau</span><p>Avenue Dr Kaosi, Kabulameshi<br>N°07, réf. Hôtel Big Five<br>Lubumbashi, Haut-Katanga, RDC</p></div>
+                        <div><span class="mono">Téléphone</span><p><a href="tel:+243994950705">RDC +243 994 950 705</a><br><a href="tel:+8615918422090">International +86 159 1842 2090</a></p></div>
+                        <div><span class="mono">E-mail</span><p><a href="mailto:contact@gss-sarl.com">contact@gss-sarl.com</a><br><a href="mailto:info@gss-sarl.com">info@gss-sarl.com</a></p></div>
+                        <div><span class="mono">Horaires</span><p>Lundi – Vendredi · 8h00 – 18h00<br>Samedi · 9h00 – 13h00<br>Dimanche · Fermé</p></div>
+                        <div><span class="mono">Légal</span><p>RCCM CD/KNM/RCCM/25-B-01433<br>ID NAT 01-F4300-N62530D<br>N° Impôt A2516384M</p></div>
                     </div>
+                </aside>
+            </div>
+        </section>
+    </main>
 
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h4>Bureau - Lubumbashi</h4>
-                        <p>Avenue Dr Kaosi, Kabulameshi<br>Numéro 07, Réf: Hôtel Big Five<br>Lubumbashi, Haut-Katanga, RDC</p>
+    <footer class="footer is-dark">
+        <div class="wrap">
+            <div class="footer-cta">
+                <h2 class="h1" data-split>Préférez-vous <em>un appel ?</em></h2>
+                <div class="footer-cta-row">
+                    <p class="lead" data-reveal>Notre équipe est joignable du lundi au samedi, par téléphone ou WhatsApp.</p>
+                    <div class="footer-cta-actions" data-reveal style="--d:.1s">
+                        <a class="btn btn--amber" href="mailto:contact@gss-sarl.com" data-magnet>Écrire un e-mail <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                        <a class="btn btn--line" href="tel:+243994950705" data-magnet>+243 994 950 705</a>
                     </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <h4>Téléphone</h4>
-                        <p>RDC: +243 994 950 705<br>International: +86 159 1842 2090</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <h4>Email</h4>
-                        <p>contact@gss-sarl.com<br>info@gss-sarl.com</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                            </svg>
-                        </div>
-                        <h4>Informations Légales</h4>
-                        <p>RCCM: CD/KNM/RCCM/25-B-01433<br>ID NAT: 01-F4300-N62530D<br>N° IMPOT: A2516384M</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </div>
-                        <h4>Horaires</h4>
-                        <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 13h00<br>Dimanche: Fermé</p>
-                    </div>
-
-                    <div class="social-links">
-                        <h4>Suivez-nous</h4>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html" aria-label="Accueil"><svg class="mark " viewBox="0 0 64 64" aria-hidden="true"><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(0.000 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(51.429 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(102.857 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(154.286 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(205.714 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(257.143 32 32)"/><rect class="ray" x="28.5" y="4" width="7" height="17" rx="3.5" transform="rotate(308.571 32 32)"/><circle class="core" cx="32" cy="32" r="7"/></svg><span class="brand-text"><b>Global Solutions</b><small>Services Sarl</small></span></a>
+                    <p>Partenaire de croissance des entreprises en République Démocratique du Congo et à l'international.</p>
+                </div>
+                <div>
+                    <h4>Pôles</h4>
+                    <ul><li><a href="service-sous-traitance.html">Services &amp; Sous-traitance</a></li><li><a href="service-ecommerce.html">Commerce &amp; e-Commerce</a></li><li><a href="service-logistique.html">Logistique &amp; Supply Chain</a></li><li><a href="service-import-export.html">Import-Export</a></li><li><a href="service-technologies.html">Technologies &amp; Innovation</a></li><li><a href="service-agro.html">Agro-Pastoral &amp; Industrie</a></li><li><a href="service-formation.html">Formation &amp; Consultancy</a></li></ul>
+                </div>
+                <div>
+                    <h4>Kinshasa — Siège</h4>
+                    <p>Avenue Tombalbaye n°43<br>Quartier de la Révolution<br>Commune de la Gombe<br>Kinshasa, RDC</p>
+                </div>
+                <div>
+                    <h4>Lubumbashi — Bureau</h4>
+                    <p>Avenue Dr Kaosi, Kabulameshi<br>N°07, réf. Hôtel Big Five<br>Lubumbashi, Haut-Katanga</p>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:contact@gss-sarl.com">contact@gss-sarl.com</a></li>
+                        <li><a href="tel:+243994950705">RDC +243 994 950 705</a></li>
+                        <li><a href="tel:+8615918422090">Int. +86 159 1842 2090</a></li>
+                        <li>Lun – Ven · 8h – 18h</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Global Solutions Services Sarl</h3>
-                    <p>Votre partenaire de croissance</p>
-                </div>
-                <div class="footer-links">
-                    <a href="index.html">Accueil</a>
-                    <a href="expertises.html">Expertises</a>
-                    <a href="apropos.html">À Propos</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-            </div>
+        <div class="footer-word" aria-hidden="true">Global <em>Solutions</em></div>
+        <div class="wrap">
             <div class="footer-bottom">
-                <p>&copy; 2026 Global Solutions Services Sarl. Tous droits réservés.</p>
+                <span>© 2026 Global Solutions Services Sarl · RCCM CD/KNM/RCCM/25-B-01433 · ID NAT 01-F4300-N62530D</span>
+                <span><button type="button" data-share-open>Partager le site <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></span>
+                <span>Powered by <a href="https://mboma.org" target="_blank" rel="noopener">MboMa &amp; Co</a></span>
             </div>
         </div>
     </footer>
 
-    <div class="custom-cursor"></div>
-    <div class="cursor-follower"></div>
-    <script src="script.js"></script>
+    <a class="wa" href="https://wa.me/243994950705" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></svg><span>Écrire sur WhatsApp</span></a>
+
+    <dialog class="share" id="share" aria-labelledby="share-title">
+        <button class="share-close" data-share="close" aria-label="Fermer">×</button>
+        <span class="label">Partager</span>
+        <h2 id="share-title">Recommandez <em>GSS</em></h2>
+        <p>Scannez le code ou envoyez le lien à vos partenaires.</p>
+        <div class="share-body">
+            <img src="qrCode.PNG" alt="QR code vers le site Global Solutions Services" width="150" height="150" loading="lazy">
+            <ul>
+                <li><button data-share="whatsapp">WhatsApp <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></li>
+                <li><button data-share="email">E-mail <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></li>
+                <li><button data-share="copy">Copier le lien <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></li>
+            </ul>
+        </div>
+        <p class="share-feedback" aria-live="polite"></p>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

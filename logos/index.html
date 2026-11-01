@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSS — Propositions de logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&family=Space+Grotesk:wght@500;700&family=Manrope:wght@600;800&family=Outfit:wght@500;700&family=DM+Sans:wght@500;700&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#14161f; --muted:#6b6f80; --line:#e6e7ec; --page:#f6f6f8; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Inter',sans-serif; background:var(--page); color:var(--ink); padding:48px 16px 80px; }
+  header { max-width:1200px; margin:0 auto 40px; }
+  header h1 { font-size:28px; font-weight:600; letter-spacing:-.02em; }
+  header p { color:var(--muted); margin-top:8px; max-width:640px; line-height:1.5; }
+  .grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:24px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; }
+  .num { font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; }
+  .stage { padding:40px 28px; display:flex; align-items:center; justify-content:center; min-height:160px; }
+  .stage.light { background:#fff; }
+  .lockup { display:flex; align-items:center; gap:14px; }
+  .lockup svg { width:56px; height:56px; flex:none; }
+  .wm-1 { line-height:1.05; }
+  .wm-1 b { display:block; font-size:22px; }
+  .wm-1 small { display:block; font-size:11px; letter-spacing:.28em; text-transform:uppercase; margin-top:4px; }
+  .row { display:grid; grid-template-columns:1fr 96px; }
+  .row .stage { min-height:120px; padding:24px; }
+  .row .app { display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(255,255,255,.08); }
+  .row .app svg { width:56px; height:56px; border-radius:14px; }
+  .lockup.sm svg { width:40px; height:40px; }
+  .lockup.sm .wm-1 b { font-size:17px; }
+  .lockup.sm .wm-1 small { font-size:9px; }
+  .info { padding:20px 24px 24px; border-top:1px solid var(--line); flex:1; }
+  .info h2 { font-size:18px; font-weight:600; margin:6px 0 6px; }
+  .info p { color:var(--muted); font-size:14px; line-height:1.5; }
+  .chips { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
+  .chip { display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted); font-family:ui-monospace,monospace; }
+  .chip i { width:18px; height:18px; border-radius:5px; border:1px solid rgba(0,0,0,.08); }
+  .font { margin-top:10px; font-size:12px; color:var(--muted); }
+  @media (max-width:420px){ .grid{grid-template-columns:1fr;} .row{grid-template-columns:1fr 72px;} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Global Solutions Services — 6 pistes de logo</h1>
+  <p>Chaque piste montre le logo complet sur fond clair, sa version sur fond foncé, et l'icône seule (favicon / app / réseaux sociaux). Choisissez un numéro — on pourra ensuite ajuster couleurs, typo ou détails.</p>
+</header>
+<main class="grid" id="grid"></main>
+
+<script>
+const marks = {
+  // 1 — Orbit : un G ouvert avec un satellite
+  orbit: (c) => `<svg viewBox="0 0 64 64">
+      <path d="M48.85 17.86A22 22 0 1 0 54 32H34" fill="none" stroke="${c.a}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="53" cy="11" r="5" fill="${c.b}"/></svg>`,
+  // 2 — Cube : hexagone isométrique, trois faces = trois métiers
+  cube: (c) => `<svg viewBox="0 0 64 64">
+      <path d="M32 6 54.5 19 32 32 9.5 19Z" fill="${c.a}"/>
+      <path d="M54.5 19V45L32 58V32Z" fill="${c.b}"/>
+      <path d="M9.5 19 32 32V58L9.5 45Z" fill="${c.c}"/></svg>`,
+  // 3 — Méridien : globe traversé par une flèche de croissance
+  meridian: (c) => `<svg viewBox="0 0 64 64">
+      <circle cx="30" cy="34" r="22" fill="none" stroke="${c.a}" stroke-width="5"/>
+      <ellipse cx="30" cy="34" rx="9" ry="22" fill="none" stroke="${c.a}" stroke-width="3"/>
+      <path d="M8 34H52" stroke="${c.a}" stroke-width="3"/>
+      <path d="M20 46 50 16" stroke="${c.bg}" stroke-width="12" stroke-linecap="round"/>
+      <path d="M20 46 50 16M36 15H51V30" fill="none" stroke="${c.b}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  // 4 — Forward : doubles chevrons, mouvement et flux
+  forward: (c) => `<svg viewBox="0 0 64 64">
+      <rect width="64" height="64" rx="16" fill="${c.a}"/>
+      <path d="M20 19 33 32 20 45" fill="none" stroke="${c.b}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+      <path d="M33 19 46 32 33 45" fill="none" stroke="${c.b}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  // 5 — Monogramme : « g » minuscule + point
+  mono: (c) => `<svg viewBox="0 0 64 64">
+      <rect width="64" height="64" rx="18" fill="${c.a}"/>
+      <circle cx="30" cy="28" r="10" fill="none" stroke="${c.b}" stroke-width="6"/>
+      <path d="M40 18V40A12 12 0 0 1 21 49.5" fill="none" stroke="${c.b}" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="47" cy="47" r="4.5" fill="${c.c}"/></svg>`,
+  // 6 — Sept pôles : sept rayons autour d'un noyau
+  seven: (c) => `<svg viewBox="0 0 64 64">
+      ${[0,1,2,3,4,5,6].map(i => `<rect x="28.5" y="4" width="7" height="17" rx="3.5" fill="${c.a}" transform="rotate(${i*360/7} 32 32)"/>`).join('')}
+      <circle cx="32" cy="32" r="7" fill="${c.b}"/></svg>`,
+};
+
+const logos = [
+  { id:1, name:'Orbit', mark:'orbit', font:'Sora', weight:700,
+    concept:"Un « G » ouvert comme une orbite, avec un satellite : portée globale, mouvement et connexion. Moderne, tech, rassurant — le plus proche de l'identité actuelle.",
+    light:{a:'#0E1A4F', b:'#1F7AFF', text:'#0E1A4F', sub:'#1F7AFF', bg:'#fff'},
+    dark: {a:'#FFFFFF', b:'#4D96FF', text:'#FFFFFF', sub:'#8FB8FF', bg:'#0E1A4F'},
+    app:  {a:'#FFFFFF', b:'#0E1A4F', bg:'#1F7AFF'},
+    palette:['#0E1A4F','#1F7AFF','#E8F0FF'] },
+  { id:2, name:'Cube', mark:'cube', font:'Space Grotesk', weight:700,
+    concept:"Un hexagone isométrique : un colis, une structure, trois faces pour Services, Commerce et Logistique. Solide, industriel, parle à l'import-export.",
+    light:{a:'#2EC4B6', b:'#0F7C74', c:'#0B3C49', text:'#0B3C49', sub:'#0F7C74', bg:'#fff'},
+    dark: {a:'#5EE0D2', b:'#2EC4B6', c:'#178F84', text:'#FFFFFF', sub:'#5EE0D2', bg:'#0B3C49'},
+    app:  {a:'#5EE0D2', b:'#2EC4B6', c:'#178F84', bg:'#0B3C49'},
+    palette:['#0B3C49','#0F7C74','#2EC4B6'] },
+  { id:3, name:'Méridien', mark:'meridian', font:'Manrope', weight:800,
+    concept:"Un globe traversé par une flèche montante : croissance et ouverture internationale. Vert et or évoquent l'agro-industrie et les ressources de la RDC.",
+    light:{a:'#0A5C43', b:'#E0A100', text:'#0A5C43', sub:'#B88400', bg:'#fff'},
+    dark: {a:'#FFFFFF', b:'#F2B92B', text:'#FFFFFF', sub:'#F2B92B', bg:'#073D2D'},
+    app:  {a:'#FFFFFF', b:'#F2B92B', bg:'#0A5C43'},
+    palette:['#073D2D','#0A5C43','#E0A100'] },
+  { id:4, name:'Forward', mark:'forward', font:'Plus Jakarta Sans', weight:800,
+    concept:"Deux chevrons qui avancent : flux, livraison, exécution rapide. Une icône énergique et très lisible en petit, idéale pour la logistique et le e-commerce.",
+    light:{a:'#FF5A1F', b:'#FFFFFF', text:'#1B1B22', sub:'#FF5A1F', bg:'#fff'},
+    dark: {a:'#FF5A1F', b:'#FFFFFF', text:'#FFFFFF', sub:'#FF8A5C', bg:'#1B1B22'},
+    app:  {a:'#FF5A1F', b:'#FFFFFF', bg:'#FF5A1F'},
+    palette:['#1B1B22','#FF5A1F','#FFF1EB'] },
+  { id:5, name:'Monogramme', mark:'mono', font:'Outfit', weight:700,
+    concept:"Un « g » minuscule et un point d'accent : l'approche des marques digitales actuelles. Simple, amical, mémorisable — fonctionne très bien en avatar.",
+    light:{a:'#3B2FD9', b:'#FFFFFF', c:'#FF6B6B', text:'#16133D', sub:'#3B2FD9', bg:'#fff'},
+    dark: {a:'#FFFFFF', b:'#3B2FD9', c:'#FF6B6B', text:'#FFFFFF', sub:'#A9A3FF', bg:'#16133D'},
+    app:  {a:'#3B2FD9', b:'#FFFFFF', c:'#FF6B6B', bg:'#3B2FD9'},
+    palette:['#16133D','#3B2FD9','#FF6B6B'] },
+  { id:6, name:'Sept pôles', mark:'seven', font:'DM Sans', weight:700,
+    concept:"Sept rayons autour d'un noyau : les 7 pôles d'expertise réunis autour du client. Évoque aussi un soleil — chaleur, énergie, ancrage africain.",
+    light:{a:'#F2A900', b:'#0B1F4D', text:'#0B1F4D', sub:'#C98C00', bg:'#fff'},
+    dark: {a:'#F2A900', b:'#FFFFFF', text:'#FFFFFF', sub:'#F2C14E', bg:'#0B1F4D'},
+    app:  {a:'#F2A900', b:'#FFFFFF', bg:'#0B1F4D'},
+    palette:['#0B1F4D','#F2A900','#FFF6DE'] },
+];
+
+const lockup = (l, c, cls='') => `
+  <div class="lockup ${cls}">
+    ${marks[l.mark](c)}
+    <div class="wm-1" style="font-family:'${l.font}',sans-serif">
+      <b style="color:${c.text};font-weight:${l.weight};letter-spacing:-.02em">Global Solutions</b>
+      <small style="color:${c.sub};font-weight:500">Services Sarl</small>
+    </div>
+  </div>`;
+
+document.getElementById('grid').innerHTML = logos.map(l => `
+  <article class="card">
+    <div class="stage light">${lockup(l, l.light)}</div>
+    <div class="row" style="background:${l.dark.bg}">
+      <div class="stage">${lockup(l, l.dark, 'sm')}</div>
+      <div class="app">${marks[l.mark](l.app).replace('<svg ', `<svg style="background:${l.app.bg}" `)}</div>
+    </div>
+    <div class="info">
+      <span class="num">Proposition ${l.id}</span>
+      <h2>${l.name}</h2>
+      <p>${l.concept}</p>
+      <div class="chips">${l.palette.map(p => `<span class="chip"><i style="background:${p}"></i>${p}</span>`).join('')}</div>
+      <div class="font">Typo : ${l.font}</div>
+    </div>
+  </article>`).join('');
+</script>
+</body>
+</html>
